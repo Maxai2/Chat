@@ -26,7 +26,7 @@ namespace Chat
         public MainWindow()
         {
             InitializeComponent();
-            lbMessages.Items = collection;
+           // lbMessages.Items = collection;
         }
         //----------------------------------------------------------------------------
         void SendMessage()
@@ -46,6 +46,8 @@ namespace Chat
                         }
                     }
                 });
+
+                lbMessages.Items.Add(collection[collection.Count - 1]);
 
                 lbMessages.ScrollIntoView(lbMessages.Items.Cast<ListBoxItem>().Last());
                 tbUser.Clear();
