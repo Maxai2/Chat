@@ -54,8 +54,9 @@ namespace Chat
         {
             collection.Add(new ListBoxItem()
             {
-                HorizontalAlignment = alignment[rightLeft],
+                HorizontalAlignment = alignment[rightLeft], 
                 IsTabStop = false,
+                Tag = str,
 
                 Content = new Border()
                 {
@@ -114,11 +115,11 @@ namespace Chat
             {
                 using (StreamWriter sw = new StreamWriter(path, false))
                 {
-                    sw.WriteLine(collection.Count + 1);
+                    sw.WriteLine(collection.Count);
 
                     foreach (ListBoxItem item in collection)
                     {
-                        sw.WriteLine(item.ContentStringFormat);
+                        sw.WriteLine(item.Tag);
                     }
                 }
             }
