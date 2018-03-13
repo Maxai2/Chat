@@ -26,7 +26,7 @@ namespace Chat
         public MainWindow()
         {
             InitializeComponent();
-           // lbMessages.Items = collection;
+            lbMessages.ItemsSource = collection;
         }
         //----------------------------------------------------------------------------
         void SendMessage()
@@ -56,7 +56,7 @@ namespace Chat
         //----------------------------------------------------------------------------
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter)
+            if (Keyboard.IsKeyDown(Key.LeftCtrl) && Keyboard.IsKeyDown(Key.Enter))
                 SendMessage();
         }
         //----------------------------------------------------------------------------
