@@ -54,18 +54,18 @@ namespace Chat
         {
             collection.Add(new ListBoxItem()
             {
-                HorizontalAlignment = alignment[rightLeft], 
+                HorizontalAlignment = alignment[rightLeft],
                 IsTabStop = false,
                 Tag = str,
 
                 Content = new Border()
                 {
                     BorderThickness = new Thickness(2),
-                    CornerRadius = new CornerRadius(50),
+                    CornerRadius = new CornerRadius(20),
+                    Background = color[rightLeft],
 
                     Child = new TextBlock
                     {
-                        Background = color[rightLeft],
                         Text = ' ' + str + ' ',
                         TextWrapping = TextWrapping.Wrap,
                         FontSize = 15,
